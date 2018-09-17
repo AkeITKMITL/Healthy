@@ -20,7 +20,7 @@ import java.util.List;
 
 public class WeightAdapter extends ArrayAdapter<Weight> {
 
-    List<Weight> weights = new ArrayList<Weight>();
+    List<Weight> weights;
     Context context;
 
     public WeightAdapter(Context context, int resource, List<Weight> object) {
@@ -40,15 +40,10 @@ public class WeightAdapter extends ArrayAdapter<Weight> {
         TextView date = weightItem.findViewById(R.id.weight_item_date);
         TextView weight = weightItem.findViewById(R.id.weight_item_weight);
         TextView status = weightItem.findViewById(R.id.weight_item_status);
-//        TextView status = weightItem.findViewById(R.id.w);
 
-        weight.setText(weights.get(position).getWeight()+"");
-        date.setText(weights.get(position).getDate()+"");
-        status.setText(weights.get(position).getStatus()+"");
-//        Weight row = weights.get(position);
-//        date.setText(row.getDate());
-//        weight.setText(row.getWeight());
-
+        weight.setText(weights.get(position).getWeight() + "");
+        date.setText(weights.get(position).getDate());
+        status.setText(weights.get(position).getStatus());
 
         return weightItem;
     }

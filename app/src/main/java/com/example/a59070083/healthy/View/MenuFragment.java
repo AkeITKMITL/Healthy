@@ -19,12 +19,11 @@ import java.util.ArrayList;
 
 
 public class MenuFragment extends Fragment {
-    ArrayList<String> menu ;
+    ArrayList<String> menu;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        return null;
         return inflater.inflate(R.layout.fragment_menu, container, false);
     }
 
@@ -37,7 +36,7 @@ public class MenuFragment extends Fragment {
         menu.add("Setup");
 
 
-        final ArrayAdapter<String> menuAdapter = new ArrayAdapter<String>( //สร้าง adapter
+        final ArrayAdapter<String> menuAdapter = new ArrayAdapter<>( //สร้าง adapter
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 menu

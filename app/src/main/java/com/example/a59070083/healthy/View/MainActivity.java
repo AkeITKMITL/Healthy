@@ -12,11 +12,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null){
-            MenuFragment menuFragment = new MenuFragment();
+            LoginFragment loginFragment = new LoginFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_view, menuFragment)
+                    .replace(R.id.main_view, loginFragment)
                     .addToBackStack(null)
                     .commit();
 

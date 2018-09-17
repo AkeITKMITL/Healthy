@@ -12,12 +12,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="15dp">
-    <EditText
-        android:drawableLeft="@drawable/ic_action_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="User Id"
-        android:id="@+id/register_userid"/>
+
+            <!--<EditText-->
+                <!--android:drawableLeft="@drawable/ic_action_name"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="User Id"-->
+                <!--android:id="@+id/register_userid"/>-->
+
+            <EditText
+                android:drawableLeft="@drawable/ic_action_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:id="@+id/register_email"/>
 
     <!--<EditText-->
         <!--android:drawableLeft="@drawable/ic_name"-->
