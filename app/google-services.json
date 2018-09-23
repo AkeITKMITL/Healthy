@@ -1,27 +1,30 @@
 {
   "project_info": {
-    "project_number": "311796140234",
-    "firebase_url": "https://android-c36c8.firebaseio.com",
-    "project_id": "android-c36c8",
-    "storage_bucket": "android-c36c8.appspot.com"
+    "project_number": "561668842144",
+    "firebase_url": "https://myfitness-f7300.firebaseio.com",
+    "project_id": "myfitness-f7300",
+    "storage_bucket": "myfitness-f7300.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:311796140234:android:491e6dfd39211dbd",
+        "mobilesdk_app_id": "1:561668842144:android:491e6dfd39211dbd",
         "android_client_info": {
           "package_name": "com.example.a59070083.healthy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "311796140234-l8khf64t2nhnuqthmtidkpb7nc5qvueb.apps.googleusercontent.com",
+          "client_id": "561668842144-9k3ivseku2dhuhrm2asdhqfdt1tc59up.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0kta29rg2MAQIRzG-m7BB-MLt2WsjM-o"
+          "current_key": "AIzaSyCvPqLgWlWTK1kekvYqU4r6wy0ejGI_7nI"
+        },
+        {
+          "current_key": "AIzaSyCvPqLgWlWTK1kekvYqU4r6wy0ejGI_7nI"
         }
       ],
       "services": {

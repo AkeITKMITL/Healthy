@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,14 +61,12 @@ public class RegisterFragment extends Fragment {
             Toast.makeText(getActivity(), "Password < 6 char", Toast.LENGTH_SHORT).show();
         } else if ( !_passwordStr.equals(_repasswordStr) ) {
             Log.d("Register", "Password not equal");
-            Toast.makeText(getActivity(), "Password Password not equal", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Password and Re-Password not equal", Toast.LENGTH_SHORT).show();
         } else {
             mAuth.createUserWithEmailAndPassword(_emailStr, _passwordStr).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
                     sendVerifiedEmail(authResult.getUser());
-                    Log.d("Register", "Register complete");
-                    Toast.makeText(getActivity(), "Register complete", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -85,6 +84,20 @@ public class RegisterFragment extends Fragment {
             public void onSuccess(Void aVoid) {
                 Log.d("Register", "Register complete");
                 Toast.makeText(getActivity(), "Register complete", Toast.LENGTH_SHORT).show();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                for(int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+                    fm.popBackStack();
+                }
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new LoginFragment())
+                        .commit();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

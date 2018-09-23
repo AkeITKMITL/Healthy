@@ -17,9 +17,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_view, loginFragment)
-                    .addToBackStack(null)
                     .commit();
-
         }
     }
 }

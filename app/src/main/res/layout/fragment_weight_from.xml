@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="50dp">
+
+            <TextView
+                android:drawableLeft="@drawable/ic_action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= ""
+                android:layout_gravity="left"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/weight_from_backBtn"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:paddingBottom="40dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/weight_from_dateBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_date"
+                    android:onClick="showDatePickerDialog" />
+
+                <EditText
+                    android:id="@+id/weight_from_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Date"
+                    android:enabled="false" />
+
+            </LinearLayout>
+
+            <EditText
+                android:hint="@string/weight"
+                android:drawableLeft="@drawable/ic_height"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/weight_from_weight" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:id="@+id/weight_from_sendBtn" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -15,6 +15,8 @@ public class Weight {
         this.weight = weight;
     }
 
+    public Weight() {}
+
     public String getDate() {
         return date;
     }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,22 @@ import android.widget.ListView;
 
 import com.example.a59070083.healthy.R;
 import com.example.a59070083.healthy.weight.WeightFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 
 public class MenuFragment extends Fragment {
     ArrayList<String> menu;
+    FirebaseAuth _auth;
+
+    public MenuFragment() {
+        menu = new ArrayList<>();
+        menu.add("BMI");
+        menu.add("Weight");
+        menu.add("Setup");
+        menu.add("Logout");
+    }
 
     @Nullable
     @Override
@@ -30,11 +41,6 @@ public class MenuFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        menu = new ArrayList<>();
-        menu.add("BMI");
-        menu.add("Weight");
-        menu.add("Setup");
-
 
         final ArrayAdapter<String> menuAdapter = new ArrayAdapter<>( //สร้าง adapter
                 getActivity(),
@@ -50,7 +56,7 @@ public class MenuFragment extends Fragment {
               Log.d("MENU","Click on menu = "+ menu.get(i));
 //                menuAdapter.notifyDataSetChanged();
 
-                if (menu.get(i).equals("BMI")){
+                if (menu.get(i).equals("BMI")) {
                     Log.d("USER","GOTO BMI");
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
@@ -58,12 +64,21 @@ public class MenuFragment extends Fragment {
                             .addToBackStack(null)
                             .commit();
                 }
-                else if (menu.get(i).equals("Weight")){
+                else if (menu.get(i).equals("Weight")) {
                     Log.d("USER","GOTO WEIGHT");
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main_view, new WeightFragment())
                             .addToBackStack(null)
+                            .commit();
+                }
+                else if (menu.get(i).equals("Logout")) {
+                    _auth = FirebaseAuth.getInstance();
+                    _auth.signOut();
+                    Log.d("USER","Logout");
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new LoginFragment())
                             .commit();
                 }
 
