@@ -3,7 +3,6 @@ package com.example.a59070083.healthy.sleep;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,6 @@ import android.widget.TextView;
 
 import com.example.a59070083.healthy.R;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class SleepAdapter extends ArrayAdapter<Sleep> {
@@ -31,7 +27,7 @@ public class SleepAdapter extends ArrayAdapter<Sleep> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View sleepItem = LayoutInflater.from(context).inflate(
-                R.layout.fregment_sleep_item,
+                R.layout.fragment_sleep_item,
                 parent,
                 false);
         TextView date = sleepItem.findViewById(R.id.sleep_item_date);

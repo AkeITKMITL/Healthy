@@ -41,7 +41,7 @@ public class SleepFromFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fregment_sleep_from, container, false);
+        return inflater.inflate(R.layout.fragment_sleep_from, container, false);
     }
 
     @Override

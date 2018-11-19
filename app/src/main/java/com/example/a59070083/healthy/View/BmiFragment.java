@@ -19,7 +19,7 @@ public class BmiFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate( R.layout.fregment_bmi, container, false);
+        return inflater.inflate( R.layout.fragment_bmi, container, false);
     }
 
     @Override

@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.a59070083.healthy.Post.PostFragment;
 import com.example.a59070083.healthy.R;
 import com.example.a59070083.healthy.sleep.SleepFragment;
 import com.example.a59070083.healthy.weight.WeightFragment;
@@ -31,6 +32,7 @@ public class MenuFragment extends Fragment {
         menu.add("Weight");
         menu.add("Setup");
         menu.add("Sleep");
+        menu.add("Post");
         menu.add("Logout");
     }
 
@@ -79,6 +81,14 @@ public class MenuFragment extends Fragment {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main_view, new SleepFragment())
+                            .addToBackStack(null)
+                            .commit();
+                }
+                else if (menu.get(i).equals("Post")) {
+                    Log.d("USER", "GOTO POST");
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new PostFragment())
                             .addToBackStack(null)
                             .commit();
                 }

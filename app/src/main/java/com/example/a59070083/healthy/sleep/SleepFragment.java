@@ -26,13 +26,12 @@ public class SleepFragment extends Fragment {
     private SQLiteDatabase myDB;
 
     public SleepFragment() {
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fregment_sleep, container, false);
+        return inflater.inflate(R.layout.fragment_sleep, container, false);
     }
 
     @Override
@@ -79,7 +78,7 @@ public class SleepFragment extends Fragment {
         ListView sleepList = getView().findViewById(R.id.sleep_list);
         final SleepAdapter sleepAdapter = new SleepAdapter(
                 getActivity(),
-                R.layout.fregment_sleep_item,
+                R.layout.fragment_sleep_item,
                 sleeps
         );
         sleepList.setAdapter(sleepAdapter);
